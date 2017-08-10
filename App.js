@@ -1,13 +1,5 @@
-import React, { Component } from 'react';
-import {
-  Navigator,
-  AppRegistry,
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  ScrollView,
-  TouchableOpacity } from 'react-native';
+import React, { Component} from 'react';
+import { View, AppRegistry } from 'react-native';
 import SideMenu from 'react-native-side-menu'
 import Header from './src/components/Header';
 import Content from './src/components/Content';
