@@ -1,13 +1,13 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 import { View, AppRegistry } from 'react-native';
-import SideMenu from 'react-native-side-menu'
+import SideMenu from 'react-native-side-menu';
 import Header from './src/components/Header';
 import Content from './src/components/Content';
 import Menu from './src/components/Menu';
 
 export default class App extends Component {
   render() {
-    const menu = <Menu navigator={this.props.navigator}/>;
+    const menu = <Menu navigator={this.props.navigator} />;
     const { viewStyles } = styles;
     return (
         <SideMenu menu={menu}>

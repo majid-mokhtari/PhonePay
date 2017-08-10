@@ -1,5 +1,5 @@
-import React, { Component} from 'react';
-import { Text, View, ScrollView } from 'react-native';
+import React, { Component } from 'react';
+import { Text, ScrollView } from 'react-native';
 
 export default class Menu extends Component {
   render() {
@@ -8,25 +8,28 @@ export default class Menu extends Component {
       <ScrollView scrollsToTop={false} style={menu}>
         <Text
           onPress={() => this.props.onItemSelected('first')}
-          style={item}>
+          style={item}
+        >
           First
         </Text>
 
         <Text
           onPress={() => this.props.onItemSelected('second')}
-          style={item}>
+          style={item}
+        >
           Second
         </Text>
 
         <Text
           onPress={() => this.props.onItemSelected('third')}
-          style={item}>
+          style={item}
+        >
           Third
         </Text>
       </ScrollView>
     );
   }
-};
+}
 
 const styles = {
   menuButton: {
@@ -54,4 +57,4 @@ const styles = {
       alignItems: 'center',
       top: 200,
   }
-}
+};
