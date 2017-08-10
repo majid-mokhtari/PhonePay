@@ -3,8 +3,7 @@ import { Text, View, ScrollView } from 'react-native';
 
 export default class Menu extends Component {
   render() {
-    const { menu } = styles;
-    const { item } = styles;
+    const { menu, item } = styles;
     return (
       <ScrollView scrollsToTop={false} style={menu}>
         <Text
@@ -43,7 +42,7 @@ const styles = {
   item: {
     fontSize: 16,
     fontWeight: '300',
-    paddingTop: 20,
+    paddingTop: 20
   },
   page: {
       flex: 1,
