@@ -5,7 +5,7 @@ const Content = () => {
   const { textStyles, viewStyles } = styles;
   return (
     <View style={viewStyles}>
-      <Text style={textStyles}>Some Content</Text>
+      <Text style={textStyles}>Some Content yoohkjgoo</Text>
     </View>
   );
 };
