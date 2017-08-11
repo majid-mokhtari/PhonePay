@@ -1,10 +1,18 @@
 import React from 'react';
 import { Text, View } from 'react-native';
+import { Button } from 'react-native-elements';
 
 const Content = () => {
   const { textStyles, viewStyles } = styles;
   return (
     <View style={viewStyles}>
+      <Button
+        raised
+        icon={{ name: 'home', size: 32 }}
+        buttonStyle={{ backgroundColor: 'red', borderRadius: 10 }}
+        textStyle={{ textAlign: 'center' }}
+        title={'Welcome to\nReact Native Elements'}
+      />
       <Text style={textStyles}>Some Content yoohkjgoo</Text>
     </View>
   );
