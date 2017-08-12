@@ -1,27 +1,12 @@
 import React, { Component } from 'react';
 import { View, AppRegistry } from 'react-native';
 import { SideMenu, List, ListItem } from 'react-native-elements';
-//import SideMenu from 'react-native-side-menu';
-import Header from './src/components/Header';
-import Content from './src/components/Content';
-//import Menu from './src/components/Menu';
+import AppContainer from './src/container/AppContainer';
 
 export default class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      isOpen: false
-    };
-    //this.toggleSideMenu = this.toggleSideMenu.bind(this)
-  }
-  render() {
-    const list = [
-      { name: 'Majid Mokhtari' },
-      { name: 'Ziyad Parekh' }
-    ];
-    //const menu = <Menu navigator={this.props.navigator} />;
-    const MenuComponent = (
-      <View style={{ flex: 1, backgroundColor: '#ededed', paddingTop: 50 }}>
+  renderMenu(list){
+    return (
+      <View style={{ flex: 1, backgroundColor: '#ededed', paddingTop: 60 }}>
         <List containerStyle={{ marginBottom: 20 }}>
         {
           list.map((l, i) => (
@@ -38,22 +23,18 @@ export default class App extends Component {
         </List>
       </View>
     );
-    const { viewStyles } = styles;
+  }
+  render() {
+    const items = [
+      { name: 'Home' },
+      { name: 'Settings' }
+    ];
     return (
-        <SideMenu menu={MenuComponent}>
-          <View style={viewStyles}>
-            <Header />
-            <Content />
-          </View>
-        </SideMenu>
+      <SideMenu menu={this.renderMenu(items)} >
+          <AppContainer />
+      </SideMenu>
       );
     }
 }
-
-const styles = {
-  viewStyles: {
-    backgroundColor: 'lightgrey'
-  }
-};
 
 AppRegistry.registerComponent('PhonePay', () => App);

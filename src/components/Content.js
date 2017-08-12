@@ -6,14 +6,7 @@ const Content = () => {
   const { textStyles, viewStyles } = styles;
   return (
     <View style={viewStyles}>
-      <Button
-        raised
-        icon={{ name: 'home', size: 32 }}
-        buttonStyle={{ backgroundColor: 'red', borderRadius: 10 }}
-        textStyle={{ textAlign: 'center' }}
-        title={'Welcome to\nReact Native Elements'}
-      />
-      <Text style={textStyles}>Some Content yoohkjgoo</Text>
+      <Text style={textStyles}>Some Content here</Text>
     </View>
   );
 };
