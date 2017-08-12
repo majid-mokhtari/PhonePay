@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import { SideMenu, List, ListItem } from 'react-native-elements';
 import Header from './../components/Header';
 import Content from './../components/Content';
 
