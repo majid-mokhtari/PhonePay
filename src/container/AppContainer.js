@@ -4,6 +4,7 @@ import Header from './../components/Header';
 import Content from './../components/Content';
 
 class AppContainer extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -11,16 +12,19 @@ class AppContainer extends Component {
     };
     this.toggleSideMenu = this.toggleSideMenu.bind(this);
   }
+
   toggleSideMenu () {
     this.setState({
       isOpen: !this.state.isOpen
     })
   }
+
   onSideMenuChange (isOpen) {
     this.setState({
       isOpen: isOpen
     })
   }
+  
   render() {
     const { viewStyles } = styles;
     return (

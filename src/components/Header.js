@@ -1,10 +1,21 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, TouchableWithoutFeedback } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Header = () => {
-  const { textStyles, viewStyles } = styles;
+  const { textStyles, viewStyles, iconStyle } = styles;
   return (
     <View style={viewStyles}>
+      
+      <TouchableWithoutFeedback onPress={() => null}>
+        <Icon 
+          name="bars"
+          color="white"
+          size={25}
+          style={iconStyle}
+        />
+        
+      </TouchableWithoutFeedback>
       <Text style={textStyles}>Phone Pay</Text>
     </View>
   );
@@ -15,12 +26,16 @@ const styles = {
     backgroundColor: 'lightblue',
     height: 80,
     paddingTop: 10,
-    alignItems: 'center',
-    justifyContent: 'center'
 
   },
   textStyles: {
-    fontSize: 20
+    fontSize: 20,
+    alignItems: 'center',
+    
+  },
+  iconStyle: {
+    padding: 20,
+    fontSize: 30
   }
 };
 
