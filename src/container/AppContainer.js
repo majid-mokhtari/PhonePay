@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, Alert } from 'react-native';
 import Header from './../components/Header';
 import Content from './../components/Content';
 
@@ -7,30 +7,20 @@ class AppContainer extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      isOpen: false
-    };
-    this.toggleSideMenu = this.toggleSideMenu.bind(this);
-  }
-
-  toggleSideMenu () {
-    this.setState({
-      isOpen: !this.state.isOpen
-    })
-  }
-
-  onSideMenuChange (isOpen) {
-    this.setState({
-      isOpen: isOpen
-    })
   }
   
+  onToggleSideMenu(){
+    this.props.onToggleSideMenu();
+  }
+
   render() {
     const { viewStyles } = styles;
     return (
         <View style={viewStyles}>
-          <Header />
-          <Content />
+          <Header 
+            {...this.props}
+            onToggleSideMenu={this.onToggleSideMenu.bind(this)}/>
+          <Content  />
         </View>
       );
     }

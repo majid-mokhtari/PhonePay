@@ -1,9 +1,27 @@
 import React, { Component } from 'react';
-import { View, AppRegistry } from 'react-native';
+import { View, AppRegistry, Alert } from 'react-native';
 import { SideMenu, List, ListItem } from 'react-native-elements';
 import AppContainer from './src/container/AppContainer';
 
 export default class App extends Component {
+
+  constructor (props) {
+    super(props)
+    this.state = {
+      isOpen: false
+    }
+  }
+  
+  onToggleSideMenu () {
+    this.setState({
+      isOpen: !this.state.isOpen
+    })
+    // Alert.alert(
+    //   'Alert Title',
+    //   "alertMessage",
+    // )
+  }
+
   renderMenu(list){
     return (
       <View style={{ flex: 1, backgroundColor: '#ededed', paddingTop: 60 }}>
@@ -30,8 +48,14 @@ export default class App extends Component {
       { name: 'Settings' }
     ];
     return (
-      <SideMenu menu={this.renderMenu(items)} >
-          <AppContainer />
+      <SideMenu 
+          menu={ this.renderMenu(items) }
+          isOpen={ this.state.isOpen } 
+          onChange={ (isOpen) => this.setState({ isOpen: isOpen })} >
+          <AppContainer 
+            {...this.props}
+            onToggleSideMenu={this.onToggleSideMenu.bind(this)}
+             />
       </SideMenu>
       );
     }

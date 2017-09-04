@@ -6,14 +6,14 @@ const Content = () => {
   const { textStyles, viewStyles } = styles;
   return (
     <View style={viewStyles}>
-      <Text style={textStyles}>Some Content here</Text>
+      <Text style={textStyles}>Some Contfdddent here</Text>
     </View>
   );
 };
 
 const styles = {
   viewStyles: {
-    backgroundColor: 'lightgrey',
+    backgroundColor: 'white',
     justifyContent: 'center',
     alignItems: 'center',
     height: '100%',
