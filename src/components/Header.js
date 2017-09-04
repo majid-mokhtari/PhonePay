@@ -12,6 +12,10 @@ class Header extends Component {
     this.props.onToggleSideMenu();
   }
 
+  onSearchClick(){
+
+  }
+  
   render (){
     const { titleStyle, viewStyles, searchStyle, barsStyle } = styles;
     return (
@@ -29,7 +33,7 @@ class Header extends Component {
            Phone Pay</Text>
         <TouchableWithoutFeedback 
           style={searchStyle} 
-          onPress={ () => this.onToggleSideMenu() }>
+          onPress={ () => this.onSearchClick() }>
           <Icon 
             name="search"
             color="white"
