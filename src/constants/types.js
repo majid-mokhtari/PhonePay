@@ -1,0 +1,1 @@
+export const SIDEMENU_CLICKED       = 'SIDEMENU_CLICKED';

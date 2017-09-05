@@ -9,7 +9,7 @@ class Header extends Component {
   }
 
   onToggleSideMenu(){
-    this.props.onToggleSideMenu();
+    this.props.actions.toggleSideMenu();
   }
 
   onSearchClick(){
@@ -53,7 +53,7 @@ Header.propTypes = {
 const styles = {
   viewStyles: {
     backgroundColor: 'orange',
-    padding: 20,
+    padding: 25,
     paddingTop: 30,
     flexDirection: 'row'
   },

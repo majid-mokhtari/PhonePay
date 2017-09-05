@@ -1,64 +1,16 @@
 import React, { Component } from 'react';
-import { View, AppRegistry, Alert } from 'react-native';
-import { SideMenu, List, ListItem } from 'react-native-elements';
+import { AppRegistry } from 'react-native';
+import { Provider } from 'react-redux';
 import AppContainer from './src/container/AppContainer';
+import { configureStore } from './src/store/store';
+import { createStore } from 'redux';
 
-export default class App extends Component {
+const store = configureStore();
+    
+export default App = () => (
+  <Provider store={store}>
+    <AppContainer />
+  </Provider>
+)
 
-  constructor (props) {
-    super(props)
-    this.state = {
-      isOpen: false
-    }
-  }
-  
-  onToggleSideMenu () {
-    this.setState({
-      isOpen: !this.state.isOpen
-    })
-    // Alert.alert(
-    //   'Alert Title',
-    //   "alertMessage",
-    // )
-  }
-
-  renderMenu(list){
-    return (
-      <View style={{ flex: 1, backgroundColor: '#ededed', paddingTop: 60 }}>
-        <List containerStyle={{ marginBottom: 20 }}>
-        {
-          list.map((l, i) => (
-            <ListItem
-              roundAvatar
-              onPress={() => console.log('Pressed')}
-              //avatar={l.avatar_url}
-              key={i}
-              title={l.name}
-              subtitle={l.subtitle}
-            />
-          ))
-        }
-        </List>
-      </View>
-    );
-  }
-  render() {
-    const items = [
-      { name: 'Home' },
-      { name: 'Settings' }
-    ];
-    return (
-      <SideMenu 
-          menu={ this.renderMenu(items) }
-          isOpen={ this.state.isOpen } 
-          onChange={ (isOpen) => this.setState({ isOpen: isOpen })} >
-          <AppContainer 
-            {...this.props}
-            onToggleSideMenu={this.onToggleSideMenu.bind(this)}
-             />
-      </SideMenu>
-      );
-    }
-}
-
-AppRegistry.registerComponent('PhonePay', () => App);
+AppRegistry.registerComponent('App', () => App);
